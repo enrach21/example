@@ -20,11 +20,23 @@ def test_bubblesort():
     # think about: (1) does your code handle 0-element arrays without
     # failing, (2) does your code handle characters?
 
-    x = np.array([1,2,4,0,1])
+    # Make arrays to be tested
+    Test1 = np.array([1,2,4,0,1])
+    Test.Empty = np.array([])
+    Test.ordered = np.array([1,2,3,4,5])
     
     # for now, just attempt to call the bubblesort function, should
     # actually check output
-    algs.bubblesort(x)
+    
+    # Test simple example array
+    assert np.array_equal(algs.bubblesort(Test1), np.array([0,1,1,2,4]))
+                          
+    # Test Empty array
+    assert np.array_equal(algs.bubblesort(Test.Empty), np.array([]))
+    
+    # Test Ordered array
+    assert np.array_equal(algs.bubblesort(Test.Ordered), np.array([1,2,3,4,5]))
+                          
 
 def test_quicksort():
 
