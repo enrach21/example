@@ -23,7 +23,7 @@ def test_bubblesort():
     # Make arrays to be tested
     Test1 = np.array([1,2,4,0,1])
     Test_Empty = np.array([])
-    Test_ordered = np.array([1,2,3,4,5])
+    Test_Ordered = np.array([1,2,3,4,5])
     
     # for now, just attempt to call the bubblesort function, should
     # actually check output
