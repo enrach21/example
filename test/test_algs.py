@@ -1,6 +1,12 @@
 import numpy as np
 from example import algs
 
+# Make arrays to be tested
+Test1 = np.array([1,2,4,0,1])
+Test_Empty = np.array([])
+Test_Ordered = np.array([1,2,3,4,5])
+Test_Char = np.array(['cat','Dog','elephant','Snake','bird'])
+
 def test_pointless_sort():
     # generate random vector of length 10
     x = np.random.rand(10)
@@ -20,11 +26,6 @@ def test_bubblesort():
     # think about: (1) does your code handle 0-element arrays without
     # failing, (2) does your code handle characters?
 
-    # Make arrays to be tested
-    Test1 = np.array([1,2,4,0,1])
-    Test_Empty = np.array([])
-    Test_Ordered = np.array([1,2,3,4,5])
-    
     # for now, just attempt to call the bubblesort function, should
     # actually check output
     
@@ -36,6 +37,9 @@ def test_bubblesort():
     
     # Test Ordered array
     assert np.array_equal(algs.bubblesort(Test_Ordered), np.array([1,2,3,4,5]))
+    
+    # Test Character array
+    assert np.array_equal(algs.bubblesort(Test_Char), np.array(['Dog','Snake','bird','cat','elephant']))
                           
 
 def test_quicksort():
