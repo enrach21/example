@@ -31,15 +31,37 @@ def bubblesort(x):
     if recursive == 1:
         bubblesort(x)
     
-    
-    assert 1 == 1
     return x
 
 def quicksort(x):
     """
     Describe how you are sorting `x`
+    
+    Goal: 
+    First: Select a pivot point. In this case the first bin in the list.
+    Second: Put all of other items in the list ordered arround the pivot variable
+    Third: Recursively do the same to each side of the list
+    Fourth: If the list being sorted is 0 return it
+    
+    
+    Variables:
+    P is the pivot point
+    
     """
-
-    assert 1 == 1
-    return
+    if len(x)==1:
+        return x
+    
+    else:
+        P = x[0]
+        List1 = np.array([])
+        List2 = np.array([])
+        for i in range (1, len(x)):
+            if (x[i] < P):
+                List1=np.append(List1,x[i])
+            else:
+                List2=np.append(List2,x[i])
+        return np.concatenate((quicksort(List1), P, quicksort(List2)), axis=None)
+    
+    
+       
 

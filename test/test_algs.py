@@ -44,7 +44,14 @@ def test_bubblesort():
 
 def test_quicksort():
 
-    x = np.array([1,2,4,0,1])
-    # for now, just attempt to call the quicksort function, should
-    # actually check output
-    algs.quicksort(x)
+    # Test simple example array
+    assert np.array_equal(algs.quicksort(Test1), np.array([0,1,1,2,4]))
+                          
+    # Test Empty array
+    assert np.array_equal(algs.quicksort(Test_Empty), np.array([]))
+    
+    # Test Ordered array
+    assert np.array_equal(algs.quicksort(Test_Ordered), np.array([1,2,3,4,5]))
+    
+    # Test Character array
+    assert np.array_equal(algs.quicksort(Test_Char), np.array(['Dog','Snake','bird','cat','elephant']))
