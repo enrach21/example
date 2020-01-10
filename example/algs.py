@@ -60,7 +60,7 @@ def quicksort(x):
                 List1=np.append(List1,x[i])
             else:
                 List2=np.append(List2,x[i])
-        return np.append((quicksort(List1), P, quicksort(List2)), axis=None)
+        return np.concatenate((quicksort(List1), P, quicksort(List2)), axis=None)
     
     
        
