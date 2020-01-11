@@ -48,18 +48,27 @@ def quicksort(x):
     P is the pivot point
     
     """
-    if len(x)==1:
+    print('The Length is...')
+    print(len(x))
+    
+    if len(x)==1 or len(x)==0:
+        print('x is...')
+        print(x)
         return x
     
     else:
-        P = x[0]
-        List1 = np.array([])
-        List2 = np.array([])
+        P = np.take(x, 0)
+        List1 = np.array([], dtype=x.dtype)
+        List2 = np.array([], dtype=x.dtype)
         for i in range (1, len(x)):
             if (x[i] < P):
-                List1=np.append(List1,x[i])
+                List1=np.append(List1,x[i])        
+                print('List1 is...')
+                print(List1)
             else:
                 List2=np.append(List2,x[i])
+                print('List2 is...')
+                print(List2)
         return np.concatenate((quicksort(List1), P, quicksort(List2)), axis=None)
     
     
