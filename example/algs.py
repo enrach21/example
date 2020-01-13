@@ -1,6 +1,6 @@
 import numpy as np
 
-def pointless_sort(x):
+def insertion_sort(x):
     """
     This function always returns the same values to show how testing
     works, check out the `test/test_alg.py` file to see.

@@ -7,7 +7,7 @@ Test_Empty = np.array([])
 Test_Ordered = np.array([1,2,3,4,5])
 Test_Char = np.array(['cat','Dog','elephant','Snake','bird'])
 
-def test_pointless_sort():
+def test_intertion_sort():
     # generate random vector of length 10
     x = np.random.rand(10)
 
