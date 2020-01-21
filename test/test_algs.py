@@ -4,21 +4,16 @@ from example import algs
 # Make arrays to be tested
 Test1 = np.array([1,2,4,0,1])
 Test_Empty = np.array([])
-Test_Ordered = np.array([1,2,3,4,5])
+Test_Ordered = np.array([1,2,3,4,5,6,7,8])
+Test_Reversed = np.array([8,7,6,5,4,3,2,1s])
 Test_Char = np.array(['cat','Dog','elephant','Snake','bird'])
 
+
 def test_intertion_sort():
-    # generate random vector of length 10
-    x = np.random.rand(10)
 
-    # check that pointless_sort always returns [1,2,3]
-    assert np.array_equal(algs.pointless_sort(x), np.array([1,2,3]))
+    # Test the complexity and accuracy of intertion sort
+    assert np.array_equal(insertion_sort(Test_Ordered, Complexity=FALSE), np.array([1,2,3,4,5,6,7,8]))
 
-    # generate a new random vector of length 10
-    x = np.random.rand(10)
-
-    # check that pointless_sort still returns [1,2,3]
-    assert np.array_equal(algs.pointless_sort(x), np.array([1,2,3]))
 
 def test_bubblesort():
     # Actually test bubblesort here. It might be useful to think about
@@ -28,6 +23,14 @@ def test_bubblesort():
 
     # for now, just attempt to call the bubblesort function, should
     # actually check output
+    
+    # Test the complexity and accuracy of intertion sort for an ordered array
+    assert np.array_equal(insertion_sort(Test_Ordered, Complexity=FALSE), np.array([1,2,3,4,5,6,7,8]))
+    assert insertion_sort(Test_Ordered, Complexity=True) == 64
+    
+    # Test the complexity and accuracy of intertion sort for an reversed array
+    assert np.array_equal(insertion_sort(Test_Reversed, Complexity=FALSE), np.array([1,2,3,4,5,6,7,8]))
+    assert insertion_sort(Test_Reversed, Complexity=True) == 64
     
     # Test simple example array
     assert np.array_equal(algs.bubblesort(Test1), np.array([0,1,1,2,4]))
