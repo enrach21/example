@@ -12,7 +12,7 @@ Test_Char = np.array(['cat','Dog','elephant','Snake','bird'])
 def test_intertion_sort():
 
     # Test the complexity and accuracy of intertion sort
-    assert np.array_equal(insertion_sort(Test_Ordered, Complexity=FALSE), np.array([1,2,3,4,5,6,7,8]))
+    assert np.array_equal(algs.insertion_sort(Test_Ordered, Complexity=False), np.array([1,2,3,4,5,6,7,8]))
 
 
 def test_bubblesort():
@@ -38,8 +38,6 @@ def test_bubblesort():
     # Test Empty array
     assert np.array_equal(algs.bubbleSort(Test_Empty, Complexity=False), np.array([]))
     
-    # Test Ordered array
-    assert np.array_equal(algs.bubbleSort(Test_Ordered, Complexity=False), np.array([1,2,3,4,5]))
     
     # Test Character array
     assert np.array_equal(algs.bubbleSort(Test_Char, Complexity=False), np.array(['Dog','Snake','bird','cat','elephant']))
@@ -52,9 +50,7 @@ def test_quicksort():
                           
     # Test Empty array
     assert np.array_equal(algs.quicksort(Test_Empty, Complexity=False), np.array([]))
-    
-    # Test Ordered array
-    assert np.array_equal(algs.quicksort(Test_Ordered, Complexity=False), np.array([1,2,3,4,5]))
+
     
     # Test Character array
     assert np.array_equal(algs.quicksort(Test_Char, Complexity=False), np.array(['Dog','Snake','bird','cat','elephant']))
