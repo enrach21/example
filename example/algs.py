@@ -135,9 +135,9 @@ def quicksort(x, Complexity):
                 print('List2 is...')
                 print(Array2)
         if Complexity == True:
-            return C + quicksort(Array1) + quicksort(Array2)
+            return C + quicksort(Array1, Complexity) + quicksort(Array2, Complexity)
         else:
-            return np.concatenate((quicksort(Array1), P, quicksort(Array2)), axis=None)
+            return np.concatenate((quicksort(Array1, Complexity), P, quicksort(Array2, Complexity)), axis=None)
         
         
 def complexity():
