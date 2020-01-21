@@ -161,5 +161,6 @@ def complexity():
         Y = np.append(Y, insertion_sort_complexity(Array))
     plt.plot(X, Y, 'o', color='black')
     plt.show()
+    return
        
 
