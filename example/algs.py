@@ -124,7 +124,7 @@ def quicksort(x, Complexity):
         Array1 = np.array([], dtype=x.dtype)
         Array2 = np.array([], dtype=x.dtype)
         for i in range (1, len(x)):
-            c +=1
+            C +=1
             if (x[i] < P):
                 Array1=np.append(Array1,x[i])        
                 print('List1 is...')
