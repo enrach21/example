@@ -108,6 +108,7 @@ def quicksort(x, Complexity):
     P is the pivot point
     
     """
+    C=0
     print('The Length is...')
     print(len(x))
     
