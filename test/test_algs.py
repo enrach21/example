@@ -5,7 +5,7 @@ from example import algs
 Test1 = np.array([1,2,4,0,1])
 Test_Empty = np.array([])
 Test_Ordered = np.array([1,2,3,4,5,6,7,8])
-Test_Reversed = np.array([8,7,6,5,4,3,2,1s])
+Test_Reversed = np.array([8,7,6,5,4,3,2,1])
 Test_Char = np.array(['cat','Dog','elephant','Snake','bird'])
 
 
