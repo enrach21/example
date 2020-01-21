@@ -25,36 +25,36 @@ def test_bubblesort():
     # actually check output
     
     # Test the complexity and accuracy of intertion sort for an ordered array
-    assert np.array_equal(insertion_sort(Test_Ordered, Complexity=FALSE), np.array([1,2,3,4,5,6,7,8]))
-    assert insertion_sort(Test_Ordered, Complexity=True) == 64
+    assert np.array_equal(algs.bubbleSort(Test_Ordered, Complexity=False), np.array([1,2,3,4,5,6,7,8]))
+    assert algs.bubbleSort(Test_Ordered, Complexity=True) == 64
     
     # Test the complexity and accuracy of intertion sort for an reversed array
-    assert np.array_equal(insertion_sort(Test_Reversed, Complexity=FALSE), np.array([1,2,3,4,5,6,7,8]))
-    assert insertion_sort(Test_Reversed, Complexity=True) == 64
+    assert np.array_equal(algs.bubbleSort(Test_Reversed, Complexity=False), np.array([1,2,3,4,5,6,7,8]))
+    assert algs.bubbleSort(Test_Reversed, Complexity=True) == 64
     
     # Test simple example array
-    assert np.array_equal(algs.bubblesort(Test1), np.array([0,1,1,2,4]))
+    assert np.array_equal(algs.bubbleSort(Test1, Complexity=False), np.array([0,1,1,2,4]))
                           
     # Test Empty array
-    assert np.array_equal(algs.bubblesort(Test_Empty), np.array([]))
+    assert np.array_equal(algs.bubbleSort(Test_Empty, Complexity=False), np.array([]))
     
     # Test Ordered array
-    assert np.array_equal(algs.bubblesort(Test_Ordered), np.array([1,2,3,4,5]))
+    assert np.array_equal(algs.bubbleSort(Test_Ordered, Complexity=False), np.array([1,2,3,4,5]))
     
     # Test Character array
-    assert np.array_equal(algs.bubblesort(Test_Char), np.array(['Dog','Snake','bird','cat','elephant']))
+    assert np.array_equal(algs.bubbleSort(Test_Char, Complexity=False), np.array(['Dog','Snake','bird','cat','elephant']))
                           
 
 def test_quicksort():
 
     # Test simple example array
-    assert np.array_equal(algs.quicksort(Test1), np.array([0,1,1,2,4]))
+    assert np.array_equal(algs.quicksort(Test1, Complexity=False), np.array([0,1,1,2,4]))
                           
     # Test Empty array
-    assert np.array_equal(algs.quicksort(Test_Empty), np.array([]))
+    assert np.array_equal(algs.quicksort(Test_Empty, Complexity=False), np.array([]))
     
     # Test Ordered array
-    assert np.array_equal(algs.quicksort(Test_Ordered), np.array([1,2,3,4,5]))
+    assert np.array_equal(algs.quicksort(Test_Ordered, Complexity=False), np.array([1,2,3,4,5]))
     
     # Test Character array
-    assert np.array_equal(algs.quicksort(Test_Char), np.array(['Dog','Snake','bird','cat','elephant']))
+    assert np.array_equal(algs.quicksort(Test_Char, Complexity=False), np.array(['Dog','Snake','bird','cat','elephant']))
