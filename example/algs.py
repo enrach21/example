@@ -41,7 +41,7 @@ def bubbleSort(x, Complexity):
  
     # Traverse through all array elements
     for i in range(n):
-    C +=1
+    C += 1
         # Last i elements are already in place
         for j in range(0, n-1):
             C += 1
