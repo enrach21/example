@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 def insertion_sort(x, Complexity):
     """
@@ -156,12 +157,64 @@ def complexity():
     
     """
     X = np.arange(100,1100,100)
-    Y = np.array([])
+    
+    # N complexity
+    N_Y = np.array([])
     for i in X:
         Array = np.random.rand(i)
-        Y = np.append(Y, insertion_sort_complexity(Array))
-    plt.plot(X, Y, 'o', color='black')
+        N_Y = np.append(N_Y, i)
+    
+    # Nlog(N) complexity 
+    N_logN_Y = np.array([])
+    for i in X:
+        Array = np.random.rand(i)
+        N_logN_Y = np.append(N_logN_Y, (i*log(i)))
+    
+    # N^2 complexity                         
+    N2Y = np.array([])
+    for i in X:
+        Array = np.random.rand(i)
+        N2Y = np.append(N2Y, (i*i))
+    
+    Insertion_Y = np.array([])
+    for i in X:
+        Array = np.random.rand(i)
+        Insertion_Y = np.append(Insertion_Y, insertion_sort_complexity(Array))
+
+    
+    plt.plot(X, N_Y, 'o', color='blue', label='O(n)')
+    plt.plot(X, N2Y, 'o', color='green', label='O(n^2)')
+    plt.plot(X, Insertion_Y, 'o', color='black', label='Insertion Sort')
     plt.show()
     return
+
+X = np.arange(100,1100,100)
+    
+# N complexity
+N_Y = np.array([])
+for i in X:
+    N_Y = np.append(N_Y, i)
+
+# Nlog(N) complexity 
+N_logN_Y = np.array([])
+for i in X:
+    N_logN_Y = np.append(N_logN_Y, (i*math.log2(i)))
+
+# N^2 complexity                         
+N2Y = np.array([])
+for i in X:
+    N2Y = np.append(N2Y, (i*i))
+
+Insertion_Y = np.array([])
+for i in X:
+    Array = np.random.rand(i)
+    Insertion_Y = np.append(Insertion_Y, insertion_sort_complexity(Array))
+
+
+plt.plot(X, N_Y, 'o', color='blue', label='O(n)')
+plt.plot(X, N2Y, 'o', color='green', label='O(n^2)')
+plt.plot(X, N_logN_Y, 'o', color='red', label='O(nlog(n)')
+plt.plot(X, Insertion_Y, 'o', color='black', label='Insertion Sort')
+plt.show()
        
 
