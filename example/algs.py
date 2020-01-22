@@ -208,13 +208,25 @@ for i in X:
 Insertion_Y = np.array([])
 for i in X:
     Array = np.random.rand(i)
-    Insertion_Y = np.append(Insertion_Y, insertion_sort_complexity(Array))
+    Insertion_Y = np.append(Insertion_Y, insertion_sort(Array, Complexity=True))
+    
+Bubble_Y = np.array([])
+for i in X:
+    Array = np.random.rand(i)
+    Bubble_Y = np.append(Bubble_Y,  bubbleSort(Array, Complexity=True))
+    
+Quick_Y = np.array([])
+for i in X:
+    Array = np.random.rand(i)
+    Quick_Y = np.append(Quick_Y,  quicksort(Array, Complexity=True))
 
 
 plt.plot(X, N_Y, 'o', color='blue', label='O(n)')
 plt.plot(X, N2Y, 'o', color='green', label='O(n^2)')
 plt.plot(X, N_logN_Y, 'o', color='red', label='O(nlog(n)')
 plt.plot(X, Insertion_Y, 'o', color='black', label='Insertion Sort')
+plt.plot(X, Bubble_Y, 'o', color='yellow', label='Insertion Sort')
+plt.plot(X, Quick_Y, 'o', color='orange', label='Insertion Sort')
 plt.show()
        
 
