@@ -32,11 +32,6 @@ def test_intertion_sort():
     # Character
     assert np.array_equal(algs.insertion_sort(Test_Char)[0], np.array(['Dog','Snake','bird','cat','elephant']))
 
-    # Run function on range of length
-    X = np.arange(100,1100,100)
-    for i in X:
-        Array = np.random.rand(i)
-        algs.insertion_sort(Array)[0]
 
 def test_bubblesort():
     # Actually test bubblesort here. It might be useful to think about

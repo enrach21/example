@@ -81,6 +81,8 @@ def bubbleSort(x):
 
 def bubbleSortRecursive(x):
     """
+    I ended up not using this function
+    
     Goals:
     The goal is to sort the array by looking at two element at a time and
     switching them if the first is less than the second and move up the array.
@@ -98,6 +100,7 @@ def bubbleSortRecursive(x):
     n is the lengh of the array.
     
     Output:
+    An Array
     """
     Assign = 0
     Condition = 0
@@ -125,7 +128,7 @@ def quicksort(x):
     First: Select a pivot point. In this case the first bin in the list.
     Second: Put all of other items in the list ordered arround the pivot variable
     Third: Recursively do the same to each side of the list
-    Fourth: If the list being sorted is 0 return it
+    Fourth: If the list being sorted is 0 or 1 return it
     
     
     Variables:
@@ -168,7 +171,7 @@ def quicksort_Assign(x):
     First: Select a pivot point. In this case the first bin in the list.
     Second: Put all of other items in the list ordered arround the pivot variable
     Third: Recursively do the same to each side of the list
-    Fourth: If the list being sorted is 0 return it
+    Fourth: If the list being sorted is 0 or 1 return it
     
     
     Variables:
@@ -203,4 +206,48 @@ def quicksort_Assign(x):
                 Array2=np.append(Array2,x[i])
                 Assign +=1
     return quicksort_Assign(Array1) + Assign + quicksort_Assign(Array2)
+
+def quicksort_Assign(x):
+    """
+    Describe how you are sorting `x`
+    
+    Goal: 
+    First: Select a pivot point. In this case the first bin in the list.
+    Second: Put all of other items in the list ordered arround the pivot variable
+    Third: Recursively do the same to each side of the list
+    Fourth: If the list being sorted is 0 or 1 return it
+    
+    
+    Variables:
+    x is the array inputed into the function.
+    Assign counts when ever an index is moved or when two elements are switched.
+    Condition counts everytime two elements are compared.
+    P is the pivot point
+    
+    Output:
+    Counts of Assign variable
+    
+    """
+    Assign = 0
+    Condition =0
+    
+    if len(x)==1 or len(x)==0:
+        Condition +=1
+        return Condition
+    
+    else:
+        P = np.take(x, 0)
+        Assign +=1
+        Array1 = np.array([], dtype=x.dtype)
+        Array2 = np.array([], dtype=x.dtype)
+        for i in range (1, len(x)):
+            Assign +=1
+            Condition +=1
+            if (x[i] < P):
+                Array1=np.append(Array1,x[i])
+                Assign +=1
+            else:
+                Array2=np.append(Array2,x[i])
+                Assign +=1
+    return quicksort_Assign(Array1) + Condition + quicksort_Assign(Array2)
         
