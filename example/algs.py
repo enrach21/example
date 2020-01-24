@@ -22,10 +22,10 @@ def insertion_sort(x):
     thris is the number of assignments
     """
     Assign = 0
-    conditional = 0
+    Condition = 0
     for i in range (1, len(x)): # pass through the array skipping the 0 element
         Assign +=1
-        conditional +=1
+        Condition +=1
         while x[i] < x[i-1]:
             x[i], x[i-1] = x[i-1], x[i]
             Assign +=2
@@ -34,7 +34,7 @@ def insertion_sort(x):
             conditional +=1
             if i == 0:
                 break
-    return x, Assign, conditional
+    return x, Assign, Condition
 
 
 def bubbleSort(x):
@@ -75,7 +75,7 @@ def bubbleSort(x):
             if x[j] > x[j+1] :
                 x[j], x[j+1] = x[j+1], x[j]
                 Assign += 2
-    return x, conditional, Assign
+    return x, Assign, Condition
 
 
 def bubbleSortRecursive(x, Complexity):
