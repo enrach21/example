@@ -158,7 +158,7 @@ def quicksort(x):
             else:
                 Array2=np.append(Array2,x[i])
                 Assign +=1
-        return np.concatenate((quicksort(Array1), P, quicksort(Array2)), axis=None)
+    return np.concatenate((quicksort(Array1), P, quicksort(Array2)), axis=None)
     
 def quicksort_Assign(x):
     """
@@ -202,37 +202,5 @@ def quicksort_Assign(x):
             else:
                 Array2=np.append(Array2,x[i])
                 Assign +=1
-        return quicksort_Assign(Array1) + Assign + quicksort_Assign(Array2)
+    return quicksort_Assign(Array1) + Assign + quicksort_Assign(Array2)
         
-
-X = np.arange(100,1100,100)
-    
-# N complexity
-N_Y = np.array([])
-for i in X:
-    N_Y = np.append(N_Y, i)
-
-# Nlog(N) complexity 
-N_logN_Y = np.array([])
-for i in X:
-    N_logN_Y = np.append(N_logN_Y, (i*math.log2(i)))
-
-# N^2 complexity                         
-N2Y = np.array([])
-for i in X:
-    N2Y = np.append(N2Y, (i*i))
-
-Insertion_Y = np.array([])
-for i in X:
-    Array = np.random.rand(i)
-    Insertion_Y = np.append(Insertion_Y, insertion_sort(Array)[0])
-    
-Bubble_Y = np.array([])
-for i in X:
-    Array = np.random.rand(i)
-    Bubble_Y = np.append(Bubble_Y,  bubbleSort(Array)[0])
-    
-Quick_Y = np.array([])
-for i in X:
-    Array = np.random.rand(i)
-    Quick_Y = np.append(Quick_Y,  quicksort_Assign(Array))
