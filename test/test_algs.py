@@ -62,4 +62,7 @@ def test_bubblesort():
                           
 
 def test_quicksort():
+    
+    # Test Empty array
+    assert np.array_equal(algs.quicksort(Test_Empty)[0], np.array([]))
 
