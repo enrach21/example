@@ -44,11 +44,11 @@ def test_bubblesort():
     
     # Test the complexity and accuracy of intertion sort for an ordered array
     assert np.array_equal(algs.bubbleSort(Test_Ordered)[0], np.array([1,2,3,4,5,6,7,8]))
-    assert algs.bubbleSort(Test_Ordered[1]) == 64
-    
+     assert algs.bubbleSort(Test_Reversed)[1] == 64
+        
     # Test the complexity and accuracy of intertion sort for an reversed array
     assert np.array_equal(algs.bubbleSort(Test_Reversed)[0], np.array([1,2,3,4,5,6,7,8]))
-    assert algs.bubbleSort(Test_Reversed[1]) == 64
+    assert algs.bubbleSort(Test_Reversed)[1] == 64
     
     # Test simple example array
     assert np.array_equal(algs.bubbleSort(Test1)[0], np.array([0,1,1,2,4]))

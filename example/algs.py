@@ -143,6 +143,8 @@ def quicksort(x):
     P is the pivot point
     
     """
+    Assign = 0
+    Condition=0
     
     if len(x)==1 or len(x)==0:
         Condition +=1
