@@ -46,28 +46,44 @@ def test_bubblesort():
     Test_Ordered = np.array([1,2,3,4,5,6,7,8])
     Test_Reversed = np.array([8,7,6,5,4,3,2,1])
     Test_Char = np.array(['cat','Dog','elephant','Snake','bird'])
-    
-    # Test the complexity and accuracy of intertion sort for an ordered array
-    assert np.array_equal(algs.bubbleSort(Test_Ordered)[0], np.array([1,2,3,4,5,6,7,8]))
-    
-        
-    # Test the complexity and accuracy of intertion sort for an reversed array
-    assert np.array_equal(algs.bubbleSort(Test_Reversed)[0], np.array([1,2,3,4,5,6,7,8]))
-   
-    
-    # Test simple example array
-    assert np.array_equal(algs.bubbleSort(Test1)[0], np.array([0,1,1,2,4]))
-                          
-    # Test Empty array
+ 
+    # Empty
     assert np.array_equal(algs.bubbleSort(Test_Empty)[0], np.array([]))
     
+    # Odd 
+    assert np.array_equal(algs.bubbleSort(TestOdd)[0], np.array([0,1,1,2,4]))
     
-    # Test Character array
+    # Ordered array
+    assert np.array_equal(algs.bubbleSort(Test_Ordered)[0], np.array([1,2,3,4,5,6,7,8]))
+    
+    # Reversed array
+    assert np.array_equal(algs.bubbleSort(Test_Reversed)[0], np.array([1,2,3,4,5,6,7,8]))
+    
+    # Character
+    assert np.array_equal(algs.bubbleSort(Test_Char)[0], np.array(['Dog','Snake','bird','cat','elephant']))
+    
 
                           
 
 def test_quicksort():
+    TestOdd = np.array([1,2,4,0,1])
+    Test_Empty = np.array([])
+    Test_Ordered = np.array([1,2,3,4,5,6,7,8])
+    Test_Reversed = np.array([8,7,6,5,4,3,2,1])
+    Test_Char = np.array(['cat','Dog','elephant','Snake','bird'])
     
-    # Test Empty array
+    # Empty
     assert np.array_equal(algs.quicksort(Test_Empty), np.array([]))
+    
+    # Odd 
+    assert np.array_equal(algs.quicksort(TestOdd), np.array([0,1,1,2,4]))
+    
+    # Ordered array
+    assert np.array_equal(algs.quicksort(Test_Ordered), np.array([1,2,3,4,5,6,7,8]))
+    
+    # Reversed array
+    assert np.array_equal(algs.quicksort(Test_Reversed), np.array([1,2,3,4,5,6,7,8]))
+    
+    # Character
+    assert np.array_equal(algs.quicksort(Test_Char), np.array(['Dog','Snake','bird','cat','elephant']))
 
