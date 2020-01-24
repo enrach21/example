@@ -31,7 +31,7 @@ def insertion_sort(x):
             Assign +=2
             i = i-1
             Assign +=1
-            conditional +=1
+            Condition +=1
             if i == 0:
                 break
     return x, Assign, Condition
