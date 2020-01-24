@@ -25,14 +25,14 @@ def insertion_sort(x):
     Assign = 0
     Condition = 0
     for i in range (1, len(x)): # pass through the array skipping the 0 element
-        Assign +=1
-        Condition +=1
+        Assign +=1 # assignment of i
+        Condition +=1 # while loop condition
         while x[i] < x[i-1]:
             x[i], x[i-1] = x[i-1], x[i]
-            Assign +=2
+            Assign +=2 # the swapping of two elements
             i = i-1
-            Assign +=1
-            Condition +=1
+            Assign +=1 # I changing by 1
+            Condition +=1 # If condition for i
             if i == 0:
                 break
     return x, Assign, Condition
@@ -79,7 +79,7 @@ def bubbleSort(x):
     return x, Assign, Condition
 
 
-def bubbleSortRecursive(x, Complexity):
+def bubbleSortRecursive(x):
     """
     Goals:
     The goal is to sort the array by looking at two element at a time and
@@ -103,26 +103,18 @@ def bubbleSortRecursive(x, Complexity):
     Condition = 0
     recursive=0
     for i in range (1, len(x)):
-        Assign += 1
-        print('i is equal to ' + str(i))
-        j = i-1
-        Assign += 1
-        print('j is equal to ' + str(j))
-        num_1 = x[j]
-        num_2 = x[i]
-        Condition += 1
-        if num_1 > num_2:
-            temp = num_1
-            x[j] = x[i]
-            x[i] = temp
+        Assign += 1 # assignment of i
+        j = i-1 # assignment of j
+        Condition += 1 # testing to see if two elements of the list
+        if x[i-1] > x[i]:
+            x[i], x[i-1] = x[i-1], x[1]
+            Assign += 2
             recursive = 1
-            
+    
+    Condition += 1 
     if recursive == 1:
-        bubbleSortRecursive(x, Complexity)
-        
-    if Complexity == True:
-        return C
-    else:
+        bubbleSortRecursive(x)
+    else:    
         return x
 
 def quicksort(x):
@@ -142,6 +134,8 @@ def quicksort(x):
     Condition counts everytime two elements are compared.
     P is the pivot point
     
+    Output:
+    Sorted list
     """
     Assign = 0
     Condition=0
@@ -182,6 +176,9 @@ def quicksort_Assign(x):
     Assign counts when ever an index is moved or when two elements are switched.
     Condition counts everytime two elements are compared.
     P is the pivot point
+    
+    Output:
+    Counts of Assign variable
     
     """
     Assign = 0
