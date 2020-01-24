@@ -1,61 +1,66 @@
 import numpy as np
 import math
 
-def insertion_sort(x, Complexity):
+def insertion_sort(x):
     """
     Goals: 
     
     Variables:
-    X is the inputted Array that wishes to be sorted
-    Complexity is a boolean that is used to indicated whether the counts should be returned or the Array
+    x is the array inputed into the function.
+    Assign counts when ever an index is moved or when two elements are switched
+    Condition counts everytime two elements are compared
+    n is the lengh of the array
+    
     """
-    C = 0
+    Assign = 0
+    conditional = 0
     for i in range (1, len(x)):
-        C +=1
+        Assign +=1
+        conditional +=1
         while x[i] < x[i-1]:
-            C +=1
-            temp = x[i]
-            x[i] = x[i-1]
-            x[i-1] = temp
+            x[i], x[i-1] = x[i-1], x[i]
+            Assign +=2
             i = i-1
+            Assign +=1
+            conditional +=1
             if i == 0:
                 break
-    if Complexity == True:
-        return C
-    else:
-        return x
+    return x, Assign, conditional, Assign
 
 
-def bubbleSort(x, Complexity):
+def bubbleSort(x):
     """
     Goals:
     
     Variables:
-    C is the complexity it goes up by one each time the array is traversed to be sorted
-    as well as when two variables are compared.
+    x is the array inputed into the function.
+    Assign counts when ever an index is moved or when two elements are switched
+    Condition counts everytime two elements are compared
+    n is the lengh of the array
+   
+   
     
     Good Commands:
     len(), will provide length of an array
     """
-    C = 0
+    Assign = 0
+    Condition = 0
     n = len(x)
  
     # Traverse through all array elements
     for i in range(n):
-        C += 1
+        Assign += 1
         # Last i elements are already in place
-        for j in range(0, n-1):
-            C += 1
- 
+        for j in range(0, n-i-1):
+            Assign += 1
+            Condition += 1
             # traverse the array from 0 to n-i-1
             # Swap if the element found is greater
             # than the next element
             if x[j] > x[j+1] :
                 x[j], x[j+1] = x[j+1], x[j]
-    if Complexity == True:
-        return C
-    else:
-        return x
+                Assign += 2
+    return x, conditional, Assign
 
 
 def bubbleSortRecursive(x, Complexity):
@@ -67,6 +72,10 @@ def bubbleSortRecursive(x, Complexity):
     in the for loop was entered. If it was then the array must be
     sorted again to ensure it is in the proper order. If it was not
     and recursive = 0 the the list is sorted.
+    x is the array inputed into the function.
+    Assign counts when ever an index is moved or when two elements are switched.
+    Condition counts everytime two elements are compared.
+    n is the lengh of the array.
     
     Good Commands:
     len(), will provide length of an array
@@ -94,7 +103,7 @@ def bubbleSortRecursive(x, Complexity):
     else:
         return x
 
-def quicksort(x, Complexity):
+def quicksort(x):
     """
     Describe how you are sorting `x`
     
@@ -106,39 +115,73 @@ def quicksort(x, Complexity):
     
     
     Variables:
+    x is the array inputed into the function.
+    Assign counts when ever an index is moved or when two elements are switched.
+    Condition counts everytime two elements are compared.
     P is the pivot point
     
     """
-    C=0
-    print('The Length is...')
-    print(len(x))
     
     if len(x)==1 or len(x)==0:
-        print('x is...')
-        print(x)
-        if Complexity == True:
-            return C
-        else:
-            return x
+        Condition +=1
+        return x
     
     else:
         P = np.take(x, 0)
+        Assign +=1
         Array1 = np.array([], dtype=x.dtype)
         Array2 = np.array([], dtype=x.dtype)
         for i in range (1, len(x)):
-            C +=1
+            Assign +=1
+            Condition +=1
             if (x[i] < P):
-                Array1=np.append(Array1,x[i])        
-                print('List1 is...')
-                print(Array1)
+                Array1=np.append(Array1,x[i])
+                Assign +=1
             else:
                 Array2=np.append(Array2,x[i])
-                print('List2 is...')
-                print(Array2)
-        if Complexity == True:
-            return C + quicksort(Array1, Complexity) + quicksort(Array2, Complexity)
-        else:
-            return np.concatenate((quicksort(Array1, Complexity), P, quicksort(Array2, Complexity)), axis=None)
+                Assign +=1
+        return np.concatenate((quicksort(Array1), P, quicksort(Array2)), axis=None)
+    
+def quicksort_Assign(x):
+    """
+    Describe how you are sorting `x`
+    
+    Goal: 
+    First: Select a pivot point. In this case the first bin in the list.
+    Second: Put all of other items in the list ordered arround the pivot variable
+    Third: Recursively do the same to each side of the list
+    Fourth: If the list being sorted is 0 return it
+    
+    
+    Variables:
+    x is the array inputed into the function.
+    Assign counts when ever an index is moved or when two elements are switched.
+    Condition counts everytime two elements are compared.
+    P is the pivot point
+    
+    """
+    Assign = 0
+    Condition =0
+    
+    if len(x)==1 or len(x)==0:
+        Condition +=1
+        return Assign
+    
+    else:
+        P = np.take(x, 0)
+        Assign +=1
+        Array1 = np.array([], dtype=x.dtype)
+        Array2 = np.array([], dtype=x.dtype)
+        for i in range (1, len(x)):
+            Assign +=1
+            Condition +=1
+            if (x[i] < P):
+                Array1=np.append(Array1,x[i])
+                Assign +=1
+            else:
+                Array2=np.append(Array2,x[i])
+                Assign +=1
+        return quicksort_Assign(Array1) + Assign + quicksort_Assign(Array2)
         
         
 def complexity():
