@@ -1,5 +1,6 @@
 import numpy as np
 import math
+pip install matplotlib
 import matplotlib.pyplot as plt
 
 def insertion_sort(x):

@@ -1,5 +1,4 @@
 import numpy as np
-# import matplotlib.pyplot as plt
 import math
 from example import algs
 
@@ -44,32 +43,23 @@ def test_bubblesort():
     # actually check output
     
     # Test the complexity and accuracy of intertion sort for an ordered array
-    assert np.array_equal(algs.bubbleSort(Test_Ordered[0]), np.array([1,2,3,4,5,6,7,8]))
-    assert algs.bubbleSort(Test_Ordered[2]) == 64
+    assert np.array_equal(algs.bubbleSort(Test_Ordered)[0], np.array([1,2,3,4,5,6,7,8]))
+    assert algs.bubbleSort(Test_Ordered[1]) == 64
     
     # Test the complexity and accuracy of intertion sort for an reversed array
-    assert np.array_equal(algs.bubbleSort(Test_Reversed[0]), np.array([1,2,3,4,5,6,7,8]))
-    assert algs.bubbleSort(Test_Reversed[2]) == 64
+    assert np.array_equal(algs.bubbleSort(Test_Reversed)[0], np.array([1,2,3,4,5,6,7,8]))
+    assert algs.bubbleSort(Test_Reversed[1]) == 64
     
     # Test simple example array
-    assert np.array_equal(algs.bubbleSort(Test1[1]), np.array([0,1,1,2,4]))
+    assert np.array_equal(algs.bubbleSort(Test1)[0], np.array([0,1,1,2,4]))
                           
     # Test Empty array
-    assert np.array_equal(algs.bubbleSort(Test_Empty[1]), np.array([]))
+    assert np.array_equal(algs.bubbleSort(Test_Empty)[0], np.array([]))
     
     
     # Test Character array
-    assert np.array_equal(algs.bubbleSort(Test_Char, Complexity=False), np.array(['Dog','Snake','bird','cat','elephant']))
+
                           
 
 def test_quicksort():
 
-    # Test simple example array
-    assert np.array_equal(algs.quicksort(Test1, Complexity=False), np.array([0,1,1,2,4]))
-                          
-    # Test Empty array
-    assert np.array_equal(algs.quicksort(Test_Empty, Complexity=False), np.array([]))
-
-    
-    # Test Character array
-    assert np.array_equal(algs.quicksort(Test_Char, Complexity=False), np.array(['Dog','Snake','bird','cat','elephant']))
