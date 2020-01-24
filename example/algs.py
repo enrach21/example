@@ -207,7 +207,7 @@ def quicksort_Assign(x):
                 Assign +=1
     return quicksort_Assign(Array1) + Assign + quicksort_Assign(Array2)
 
-def quicksort_Assign(x):
+def quicksort_Condition(x):
     """
     Describe how you are sorting `x`
     
@@ -225,7 +225,7 @@ def quicksort_Assign(x):
     P is the pivot point
     
     Output:
-    Counts of Assign variable
+    Counts of Condition variable
     
     """
     Assign = 0
