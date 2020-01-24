@@ -1,6 +1,5 @@
 import numpy as np
 import math
-import matplotlib.pyplot as plt
 # import matplotlib.pyplot as plt
 
 def insertion_sort(x):
@@ -240,9 +239,3 @@ Quick_Y = np.array([])
 for i in X:
     Array = np.random.rand(i)
     Quick_Y = np.append(Quick_Y,  quicksort_Assign(Array))
-
-    
-plt.plot(X, N_Y, 'o', color='blue', label='O(n)')
-plt.plot(X, N2Y, 'o', color='green', label='O(n^2)')
-plt.plot(X, N_logN_Y, 'o', color='red', label='O(nlog(n)')
-
